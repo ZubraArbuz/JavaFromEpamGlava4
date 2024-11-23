@@ -126,8 +126,8 @@ class Airplane {
         return route;
     }
 
-    public void printFly() {
-        System.out.println("Статус полета: " + (fly != null ? fly : "Самолет не летит."));
+    public String getFly(){
+        return fly;
     }
 
     public String getRoute() {
@@ -170,7 +170,9 @@ public class Main {
             String currentRoute = airplane.getRoute();
             System.out.println("Текущий маршрут: " + currentRoute);
             airplane.setFly("Летит");
-            airplane.printFly();
+            String currentFly = airplane.getFly();
+            System.out.println("Статус полета: " + (currentFly != null ? currentFly : "Самолет не летит."));
+
         }
 }
 

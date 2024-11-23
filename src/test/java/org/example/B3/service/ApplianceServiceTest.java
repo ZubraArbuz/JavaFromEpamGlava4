@@ -3,13 +3,10 @@ package org.example.B3.service;
 import org.example.B3.appliances.ElectricalAppliance;
 import org.example.B3.appliances.Fridge;
 import org.example.B3.appliances.TV;
-import org.junit.jupiter.engine.config.*;
 import org.junit.jupiter.api.*;
 import static org.junit.jupiter.api.Assertions.*;
 
 import java.util.List;
-import java.util.Map;
-import java.util.Optional;
 
 
 class ApplianceServiceTest {
