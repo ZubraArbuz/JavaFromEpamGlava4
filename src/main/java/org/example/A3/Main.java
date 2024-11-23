@@ -130,6 +130,10 @@ class Airplane {
         System.out.println("Статус полета: " + (fly != null ? fly : "Самолет не летит."));
     }
 
+    public String getRoute() {
+        return route;
+    }
+
 
     @Override
     public boolean equals(Object o) {
@@ -155,23 +159,20 @@ class Airplane {
 }
 
 public class Main {
-    public static void printRoute(String route) {
-        System.out.println("Маршрут самолета: " + (route != null ? route : "Маршрут не задан."));
-    }
+        public static void main(String[] args) {
+            Wing wing = new Wing(25.0);
+            Chassis chassis = new Chassis(12);
+            Engine engine = new Engine("Турбореактивный");
+            Airplane airplane = new Airplane(wing, chassis, engine);
 
-    public static void main(String[] args) {
-        Wing wing = new Wing(25.0);
-        Chassis chassis = new Chassis(12);
-        Engine engine = new Engine("Турбореактивный");
-
-        Airplane airplane = new Airplane(wing, chassis, engine);
-
-        System.out.println(airplane);
-        String Route1 = airplane.setRoute("Москва -> Санкт-Петербург");
-        printRoute(Route1);
-        airplane.setFly("Летит");
-        airplane.printFly();
-    }
-
-
+            System.out.println(airplane);
+            airplane.setRoute("Москва -> Санкт-Петербург");
+            String currentRoute = airplane.getRoute();
+            System.out.println("Текущий маршрут: " + currentRoute);
+            airplane.setFly("Летит");
+            airplane.printFly();
+        }
 }
+
+
+
